@@ -26,12 +26,12 @@ namespace WeatherWidge
             }
         }
 
-        public void MapWeatherForecastData ()
+        public void MapWeatherForecastData (string city)
         {
             
 
             // This URI will retrieved the 3 day forecast
-            string JSONstring = getString("http://api.wunderground.com/api/6c99744103fecd5c/forecast/q/TX/Austin.json");
+            string JSONstring = getString("http://api.wunderground.com/api/6c99744103fecd5c/forecast/q/TX/" + city +".json");
 
             if (JSONstring != "Error")
             {
@@ -71,10 +71,10 @@ namespace WeatherWidge
             }
         }
 
-        public void MapCurrentWeatherData()
+        public void MapCurrentWeatherData(string city)
         {
             // This URI will retrieved the current conditions
-            string JSONstring = getString("http://api.wunderground.com/api/6c99744103fecd5c/conditions/q/TX/Austin.json");
+            string JSONstring = getString("http://api.wunderground.com/api/6c99744103fecd5c/conditions/q/TX/" + city + ".json");
 
              if (JSONstring != "Error")
             {
@@ -99,7 +99,7 @@ namespace WeatherWidge
             
             if (!Page.IsPostBack)
             {
-                MapWeatherForecastData();
+                MapWeatherForecastData(CityLabel.Text );
             }
         }
 
@@ -109,15 +109,33 @@ namespace WeatherWidge
             if (DetailPanel.Visible )
             {
                 Day1DetailsLinkButton.Text = "Details... +";
-                DetailPanel.Visible = true;
+                DetailPanel.Visible = false;
             }
             else
             {
-                MapCurrentWeatherData();
+                MapCurrentWeatherData(CityLabel.Text);
                 DetailPanel.Visible = true;
                 Day1DetailsLinkButton.Text = "Details... -";
             }
            
+        }
+
+        protected void AUImgButton_Click(object sender, ImageClickEventArgs e)
+        {
+            CityLabel.Text = "Austin";
+            MapWeatherForecastData(CityLabel.Text);
+        }
+
+        protected void WacoImgButton_Click(object sender, ImageClickEventArgs e)
+        {
+            CityLabel.Text = "Waco";
+            MapWeatherForecastData(CityLabel.Text);
+        }
+
+        protected void CSImgButton_Click(object sender, ImageClickEventArgs e)
+        {
+            CityLabel.Text = "College_Station";
+            MapWeatherForecastData(CityLabel.Text);
         }
 
        

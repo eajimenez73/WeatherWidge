@@ -71,38 +71,38 @@ namespace WeatherWidge.Models
 
         public class QpfAllday
         {
-            public double @in { get; set; }
-            public int mm { get; set; }
+            public double? @in { get; set; }
+            public int? mm { get; set; }
         }
 
         public class QpfDay
         {
-            public double @in { get; set; }
-            public int mm { get; set; }
+            public double? @in { get; set; }
+            public int? mm { get; set; }
         }
 
         public class QpfNight
         {
-            public double @in { get; set; }
-            public int mm { get; set; }
+            public double? @in { get; set; }
+            public int? mm { get; set; }
         }
 
         public class SnowAllday
         {
-            public double @in { get; set; }
-            public double cm { get; set; }
+            public double? @in { get; set; }
+            public double? cm { get; set; }
         }
 
         public class SnowDay
         {
-            public double @in { get; set; }
-            public double cm { get; set; }
+            public double? @in { get; set; }
+            public double? cm { get; set; }
         }
 
         public class SnowNight
         {
-            public double @in { get; set; }
-            public double cm { get; set; }
+            public double? @in { get; set; }
+            public double? cm { get; set; }
         }
 
         public class Maxwind
