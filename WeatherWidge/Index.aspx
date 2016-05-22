@@ -65,8 +65,24 @@
                     <span class="icon-bar"></span>
 
                   </button>
+                  <table width="100%" >
+                      <tr>
+                          <td width="400">
+                            <a class="navbar-brand" href="index.aspx"><img src="assets/images/TWeather-logo.png" alt=""/></a>
+                          </td>
+                          <td width="150">
+                            <asp:ImageButton ID="AUImgButton" runat="server" src="assets/images/Longhorns.png" OnClick="AUImgButton_Click"/>Austin
+                          </td>
+                          <td width="150">
+                            <asp:ImageButton ID="WacoImgButton" runat="server" src="assets/images/Baylor.png" OnClick="WacoImgButton_Click" />Waco
+                          </td>
+                          <td width="200">
+                            <asp:ImageButton ID="CSImgButton" runat="server" src="assets/images/texasAM.png" OnClick="CSImgButton_Click" />College Station
+                          </td>
+                      </tr>
+                      
+                  </table>
                   
-                  <a class="navbar-brand" href="index.html"><img src="assets/images/TWeather-logo.png" alt=""></a>
                   
                 </div>
 
@@ -85,7 +101,7 @@
         <asp:Label ID="ErrorLabel" runat="server" Text="Label" Font-Bold="True" Font-Size="Larger" ForeColor="#990000" Visible="false"></asp:Label>
         <div class="container">
             <div><p>
-                <h2 class="col-title"><asp:Label ID="CityLabel" runat="server" Text="Austin ."></asp:Label>&nbsp; 
+                <h2 class="col-title"><asp:Label ID="CityLabel" runat="server" Text="Austin"></asp:Label>&nbsp; 
                 <asp:LinkButton ID="Day1DetailsLinkButton" runat="server" class="btn btn-primary" OnClick="Day1DetailsLinkButton_Click">Details... +</asp:LinkButton></h2>
             </p>
             </div>
